@@ -17,13 +17,13 @@ class Installer
 
     public static function install()
     {
-        self::recursiveCopy('vendor/cirevolution/cli/config', $this->roots.'config');
+        self::recursiveCopy('vendor/cirevolution/cli/config', $roots.'config');
         
         @mkdir('tmp', 0755);
         @mkdir('tmp/log', 0755);
         
-        self::copy('vendor/cirevolution/cli/cli', $this->roots.'cli');
-        self::copy('vendor/cirevolution/cli/instance.php', $this->roots.'app/console/instance.php');
+        self::copy('vendor/cirevolution/cli/cli', $roots.'cli');
+        self::copy('vendor/cirevolution/cli/instance.php', $roots.'app/console/instance.php');
         
         chmod('cli', 0755);
     }
