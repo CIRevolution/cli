@@ -13,6 +13,7 @@ $installer->install();
 
 class Installer
 {
+
     public static function install()
     {
         self::recursiveCopy('vendor/cirevolution/cli/config', '../../../config');
