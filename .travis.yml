@@ -1,0 +1,30 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+
+before_script:
+  - pwd
+  - export cwd=`pwd`
+  - composer self-update
+  - cd ..
+  - pwd
+  - composer create-project cirevolution/ci codeigniter
+  - cd codeigniter
+  - composer require cirevolution/cli:1.0.x@dev --dev
+  - mv vendor/kenjis/codeigniter-cli vendor/cirevolution/cli.tmp
+  - mv "$cwd" vendor/cirevolution/cli
+  - php vendor/cirevolution/cli/install.php
+  - cd vendor/cirevolution/cli
+  - pwd
+  - composer install
+
+script:
+  - pwd
+  - phpunit --coverage-text
+
+after_script:
+  - pwd
+  - php vendor/bin/coveralls -v

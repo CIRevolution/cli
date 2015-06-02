@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+
+$path = __DIR__;
+chdir($path);
+
+/** @const ROOTPATH CodeIgniter project root directory */
+define('ROOTPATH', __DIR__ . '/');
+
+require "{$path}/vendor/autoload.php";
+
+// generate CodeIgniter instance
+$ci = require "{$path}/app/console/instance.php";
+
+class_alias('CLI\Command\Command', 'Command');
+class_alias('CLI\Command\Seed',    'Seeder');
+class_alias('Aura\Cli\Help', 'Help');
+
+$kernel = (new \Aura\Project_Kernel\Factory)->newKernel(
+    $path,
+    'Aura\Cli_Kernel\CliKernel'
+);
+$status = $kernel();
+exit($status);
