@@ -16,7 +16,7 @@ class Installer
 
     public static function install()
     {
-        self::recursiveCopy('vendor/cirevolution/cli/config', 'config');
+        // self::recursiveCopy('vendor/cirevolution/cli/config', 'config');
         
         @mkdir('storage/tmp', 0755);
         @mkdir('storage/tmp/log', 0755);
