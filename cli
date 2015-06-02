@@ -1,5 +1,7 @@
 #!/usr/bin/env php
 
+<?php
+
 $path = __DIR__;
 chdir($path);
 

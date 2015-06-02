@@ -12,7 +12,7 @@ namespace CLI\Command;
 
 use Aura\Cli\Stdio;
 use Aura\Cli\Context;
-use Controller;
+use System\Core\Controller;
 use RuntimeException;
 
 abstract class Command
