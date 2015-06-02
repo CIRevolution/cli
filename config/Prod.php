@@ -8,7 +8,7 @@
  * @link       https://github.com/kenjis/codeigniter-cli
  */
 
-namespace CLI\_Config;
+namespace AppConfig\_Config;
 
 use Aura\Di\Config;
 use Aura\Di\Container;

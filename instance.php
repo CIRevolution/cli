@@ -18,15 +18,15 @@ $system_path = rtrim($system_path, '/') . '/';
 define('BASEPATH', str_replace("\\", "/", $system_path));
 define('FCPATH', $doc_root . '/');
 define('APPPATH', $application_folder . '/');
-define('ROOTPATH', $goRoot);
+define('ROOOTPATH', $goRoot);
 define('VIEWPATH', $application_folder . '/views/');
 
 require(BASEPATH . 'Core/Common.php');
 
-if (file_exists(ROOTPATH . 'config/' . ENVIRONMENT . '/constants.php')) {
-    require(ROOTPATH . 'config/' . ENVIRONMENT . '/constants.php');
+if (file_exists(ROOOTPATH . 'config/' . ENVIRONMENT . '/constants.php')) {
+    require(ROOOTPATH . 'config/' . ENVIRONMENT . '/constants.php');
 } else {
-    require(ROOTPATH . 'config/constants.php');
+    require(ROOOTPATH . 'config/constants.php');
 }
 
 $charset = strtoupper(config_item('charset'));
